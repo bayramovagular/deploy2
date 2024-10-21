@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f6f4ef;
+}
+
+.navbar {
+  background-color: #e5e0d7;
+  padding: 10px 20px;
+
+  .navbar-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .navbar-left {
+          display: flex;
+          align-items: center;
+
+          .language {
+              background-color: transparent;
+              border: 1px solid grey;
+              border-radius: 4px;
+              font-size: 18px;
+              margin-right: 10px;
+          }
+      }
+
+      .logo {
+          font-family: 'Times New Roman', serif;
+          font-size: 24px;
+          font-weight: bold;
+      }
+
+      .navbar-right {
+          display: flex;
+          align-items: center;
+
+          a {
+              margin-left: 15px;
+              font-size: 20px;
+          }
+      }
+  }
+
+  .navbar-bottom {
+      margin-top: 10px;
+
+      .menu {
+          display: flex;
+          justify-content: center;
+          list-style: none;
+
+          li {
+              margin: 0 15px;
+          }
+
+          a {
+              text-decoration: none;
+              color: #333;
+              font-size: 18px;
+              padding: 5px 10px;
+          }
+      }
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: #f0ede9;
+  height: 100vh;
+
+  .hero-content {
+      max-width: 50%;
+
+      .hero-title {
+          font-size: 6rem;
+          font-family: 'Times New Roman', serif;
+          font-weight: bold;
+          line-height: 1.2;
+          margin-bottom: 20px;
+      }
+
+      .hero-description {
+          font-size: 1rem;
+          color: #666;
+          margin-bottom: 30px;
+          max-width: 80%;
+      }
+
+      .cta-button {
+          display: inline-flex;
+          align-items: center;
+          background-color: #c19a6b;
+          color: white;
+          padding: 15px 25px;
+          text-decoration: none;
+          font-size: 1rem;
+          border-radius: 5px;
+          font-weight: bold;
+          transition: background-color 0.3s;
+
+          i {
+              margin-right: 10px;
+          }
+
+          &:hover {
+              background-color: #a98252;
+          }
+      }
+  }
+
+  .hero-image {
+      position: relative;
+
+      img {
+          width: 890px;
+          height: 700px;
+          border-radius: 10px 0 0 0;
+          opacity: 1; 
+      }
+
+      .image-blur {
+          width: 22%;
+          filter: blur(3px);
+          position: absolute;
+          top: 100px;
+          left: 300;
+          height: 100%;
+          overflow: hidden;
+      }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+
+      .hero-content {
+          max-width: 100%;
+      }
+
+      .hero-image img {
+          max-width: 80%;
+          margin-top: 20px;
+      }
+  }
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+
+  .gallery-item {
+      flex: 1;
+      position: relative;
+
+      img {
+          width: 360px;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 30%;
+          background: rgba(184, 184, 190, 0.121);
+          backdrop-filter: blur(7px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .image-text {
+          font-size: 18px;
+          color: #333;
+          font-weight: bold;
+          text-align: center;
+          opacity: 1;
+          z-index: 1;
+      }
+  }
+}
+
+#about {
+  background-color: #f4f4f4; 
+  padding: 50px 0; 
+}
+
+.container {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+.about {
+  display: flex; /* Flexbox düzülməsi */
+  align-items: center; 
+  padding: 50px; /* Üst və alt boşluq */
+
+}
+
+.about-left {
+  flex: 1; /* Sol tərəfi genişləndir */
+  margin-right: 20px; /* Sağ tərəfə boşluq */
+  
+  figure {
+      margin: 0; 
+  }
+
+  img {
+      width: 100%; /* Şəkili konteynerin genişliyinə uyğunlaşdır */
+      border-radius: 10px; /* Küncləri yuvarlaqlaşdır */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Kölgə əlavə et */
+  }
+}
+
+.about-right {
+  flex: 2; /* Sağ tərəfi daha geniş et */
+  text-align: right; /* Mətni sağa düz */
+  
+  p {
+      font-size: 1rem; /* Mətn ölçüsü */
+      line-height: 1.6; /* Sətir aralığı */
+      color: #666; /* Mətn rəngi */
+      margin-bottom: 20px; /* Aşağı boşluq */
+  }
+
+  .btn-learn-more {
+      display: inline-block; /* Butonu inline blok olaraq göstərin */
+      padding: 10px 20px; /* Daxili boşluq */
+      background-color: #c19a6b; /* Butonun arxa fonu */
+      color: white; /* Butonun yazı rəngi */
+      text-decoration: none; /* Alt xətt olmaması */
+      border-radius: 5px; /* Küncləri yuvarlaqlaşdır */
+      transition: background-color 0.3s;
+
+      &:hover {
+          background-color: #a98252; /* Hover zamanı */
+      }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+      flex-direction: column; 
+      text-align: center; 
+  }
+  
+  .about-left {
+      margin-right: 0; /* Mobil görünüşdə sağ boşluğu sil */
+      margin-bottom: 20px; 
+  }
+}
+.product-1 {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  
+    .product-card {
+        flex: 1;
+        position: relative;
+  
+        img {
+            width: 360px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+.card{
+    width: calc(12.5% - 16px);
+    background-color: #fff;     
+    border: 1px solid #ccc;      
+    border-radius: 8px; 
+    overflow: hidden;
+    margin: 20px;
+
+}
+.card img{
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
